@@ -23,3 +23,8 @@ Route::get('/logout', 'Auth\AuthController@getLogout');
 // Маршруты регистрации...
 Route::get('/register', 'Auth\AuthController@getRegister');
 Route::post('/register', 'Auth\AuthController@postRegister');
+
+// Маршруты задач...
+Route::get('/tasks', 'TaskController@index');
+Route::post('/task', 'TaskController@store');
+Route::delete('/task/{task}', 'TaskController@destroy');
