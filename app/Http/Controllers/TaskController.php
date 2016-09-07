@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Repositories\TaskRepository;
+use App\Task;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -60,5 +61,16 @@ class TaskController extends Controller
         ]);
 
         return redirect('/tasks');
+    }
+
+    /**
+     * Уничтожить заданную задачу.
+     *
+     * @param Request $request
+     * @param Task $task
+     */
+    public function destroy(Request $request, Task $task)
+    {
+        //
     }
 }

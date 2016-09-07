@@ -58,8 +58,14 @@
                                 <div>{{ $task->name }}</div>
                             </td>
 
+                            <!-- Кнопка Удалить -->
                             <td>
-                                <!-- TODO: Кнопка Удалить -->
+                                <form action="/task/{{ $task->id }}" method="POST">
+                                    {{ csrf_field() }}
+                                    {{ method_field('DELETE') }}
+
+                                    <button>Удалить задачу</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach
