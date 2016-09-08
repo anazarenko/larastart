@@ -68,9 +68,15 @@ class TaskController extends Controller
      *
      * @param Request $request
      * @param Task $task
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @throws \Exception
      */
     public function destroy(Request $request, Task $task)
     {
-        //
+        $this->authorize('destroy', $task);
+
+        $task->delete();
+
+        return redirect('/tasks');
     }
 }
